@@ -1,7 +1,8 @@
 package personnages;
 
+
 public class Gaulois {
-	private String nom;
+	public String nom;
 	private int force;
 	private int effetPotion = 1;
 	
@@ -19,23 +20,44 @@ public class Gaulois {
 	}	
 
 	private String prendreParole() {
-		// TODO Auto-generated method stub
 		return "Le gaulois " + nom + ":" ;
 	}
 
 	public void frapper(Romain romain) {
-		System.out.println(nom + "envoie un grand coup dans la m�choire de " + romain.getNom() );
+		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom() );
 		romain.recevoirCoup(force / 3);
 	}
 	
-//	@Override
-//	public String toString() {
-//		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
-//	}
+	public void boirePotion(int forcePotion) {
+		effetPotion=forcePotion;
+		if (forcePotion >= 3) {
+			parler("Merci Druide, je sens que ma force est "+ forcePotion +" fois décuplée.");
+		}
+	}
+	
+	@Override
+	public String toString() {
+		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
+	}
 	
 	public static void main(String[] args) {
-		asterix (nom = "Asterix", force = 8);
+		//création d'un gaulois
+		Gaulois asterix = new Gaulois("Asterix",8);
+		
 		System.out.println(asterix);
+		
+		//test du fonctionnement de la méthode prendreParole())
+		System.out.println(asterix.prendreParole());
+		
+		asterix.parler("COUCOU");
+		Romain Minus = new Romain("Minus", 6);
+		asterix.frapper(Minus);
+		
+		//test boirePotion
+		Druide panoramix = new Druide("Panoramix",1,3,1);
+		panoramix.preparerPotion();
+		asterix.boirePotion(panoramix.forcePotion);
+		
 	}
 	
 	

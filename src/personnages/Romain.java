@@ -25,9 +25,13 @@ public class Romain {
 	public void recevoirCoup(int forceCoup) {
 		force -= forceCoup;
 		if (force>0) {
-			parler("Aîe");
+			parler("AÃ¯e");
 		} else {
 			parler("J'abandonne..");
 		}
+	}
+	
+	public static void main(String[] args) {
+		Romain Minus = new Romain("Minus", 6);
 	}
 }
