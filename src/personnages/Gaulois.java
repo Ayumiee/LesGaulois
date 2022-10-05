@@ -2,7 +2,7 @@ package personnages;
 
 
 public class Gaulois {
-	public String nom;
+	private String nom;
 	private int force;
 	private int effetPotion = 1;
 	

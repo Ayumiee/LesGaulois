@@ -43,7 +43,7 @@ public class Druide {
 		}
 	
 	public void booster(Gaulois gaulois) {
-		if (gaulois.nom != "Obélix") {
+		if (this.nom != "Obélix") {
 			gaulois.boirePotion(forcePotion);
 		}
 		else {
